@@ -46,7 +46,7 @@ jobs:
       - name: Deploy to GCP (Cloud Function)
         run: |
           gcloud config set project travel-bureau
-          gcloud functions deploy travel-bureau-db-optimizer \
+          gcloud functions deploy db-optimizer \
             --runtime python311 \
             --trigger-http \
             --source . \
@@ -57,7 +57,7 @@ jobs:
         run: |
           gcloud config set project travel-bureau
 
-          JOB_NAME="travel-bureau-db-optimizer"
+          JOB_NAME="db-optimizer"
           REGION="us-central1"
           SCHEDULE="0 0 * * */6"  # ⏰ At 00:00 on every 6th day-of-week.
           FUNCTION_URL=${{ secrets.GCP_FUNCTION_URL }}
