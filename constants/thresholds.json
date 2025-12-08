@@ -1,0 +1,20 @@
+{
+  "mongo_db": {
+    "collections": [
+      {
+        "name": "itineraries",
+        "threshold": 1000,
+        "del_pct": 0.5
+      },
+      {
+        "name": "trips",
+        "threshold": 30000,
+        "del_pct": 0.5
+      }
+    ]
+  },
+  "redis": {
+    "threshold": 2500,
+    "del_pct": 0.5
+  }
+}
