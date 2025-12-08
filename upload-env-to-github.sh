@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Repo and environment config
-REPO="eric-stanley/lovelytrails-itinerary-generator-db-optimizer"   # 🔁 Replace with your actual repo
+REPO="travel-bureau/db-optimizer"   # 🔁 Replace with your actual repo
 ENV_NAME="prod"                  # Target GitHub environment
 ENV_FILE_PATH=".env"
 
@@ -40,7 +40,7 @@ echo -e "✅ All secrets uploaded to GitHub environment '$ENV_NAME'"
 # 📁 Upload sa-key.json as GCP_SA_KEY
 if [ -f "keys/sa-key.json" ]; then
   sa_key=$(<keys/sa-key.json)
-  gh secret set GCP_SA_KEY --env "$ENV_NAME" --body "$sa_key" --repo "$REPO" &> /dev/null
+  gh secret set GCP_SA_KEY --env "$ENV_NAME" --body "$sa_key" &> /dev/null
   echo "🔐 GCP_SA_KEY uploaded from keys/sa-key.json"
 else
   echo "⚠️ keys/sa-key.json not found — skipping GCP_SA_KEY upload"
