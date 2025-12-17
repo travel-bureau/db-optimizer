@@ -39,7 +39,7 @@ async def main(request=None, source="local"):
 
     delete_keys_by_oldest_ttl(threshold, del_pct)
 
-    return "Done!!"
+    return "Done!"
 
 if __name__ == "__main__":
     asyncio.run(run_bot())
